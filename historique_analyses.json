@@ -1,0 +1,163 @@
+[
+  {
+    "date": "20/06/2026",
+    "heure": "15:23:01",
+    "utilisateur": "utilisateur",
+    "fichier": "billets2.csv",
+    "nb_total": 100,
+    "nb_auth": 66,
+    "nb_faux": 34,
+    "taux_faux": 34.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "11:23:42",
+    "utilisateur": "utilisateur",
+    "fichier": "billets_test.csv",
+    "nb_total": 5,
+    "nb_auth": 2,
+    "nb_faux": 3,
+    "taux_faux": 60.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "09/06/2026",
+    "heure": "23:33:32",
+    "utilisateur": "utilisateur",
+    "fichier": "billets2.csv",
+    "nb_total": 100,
+    "nb_auth": 66,
+    "nb_faux": 34,
+    "taux_faux": 34.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "08/06/2026",
+    "heure": "22:56:33",
+    "utilisateur": "utilisateur",
+    "fichier": "billets2.csv",
+    "nb_total": 100,
+    "nb_auth": 66,
+    "nb_faux": 34,
+    "taux_faux": 34.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "08/06/2026",
+    "heure": "22:52:47",
+    "utilisateur": "admin",
+    "fichier": "billets2.csv",
+    "nb_total": 100,
+    "nb_auth": 66,
+    "nb_faux": 34,
+    "taux_faux": 34.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "08/06/2026",
+    "heure": "22:52:32",
+    "utilisateur": "admin",
+    "fichier": "billets_faux_15_nouvelles_donnees.csv",
+    "nb_total": 15,
+    "nb_auth": 0,
+    "nb_faux": 15,
+    "taux_faux": 100.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "08/06/2026",
+    "heure": "22:51:04",
+    "utilisateur": "admin",
+    "fichier": "billets_faux_15_nouvelles_donnees.csv",
+    "nb_total": 15,
+    "nb_auth": 0,
+    "nb_faux": 15,
+    "taux_faux": 100.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "08/06/2026",
+    "heure": "22:43:47",
+    "utilisateur": "admin",
+    "fichier": "billets2.csv",
+    "nb_total": 100,
+    "nb_auth": 66,
+    "nb_faux": 34,
+    "taux_faux": 34.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "08/06/2026",
+    "heure": "12:21:01",
+    "utilisateur": "admin",
+    "fichier": "billets_test.csv",
+    "nb_total": 5,
+    "nb_auth": 2,
+    "nb_faux": 3,
+    "taux_faux": 60.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "08/06/2026",
+    "heure": "11:47:02",
+    "utilisateur": "utilisateur",
+    "fichier": "billets_vrais_15_nouvelles_donnees.csv",
+    "nb_total": 15,
+    "nb_auth": 15,
+    "nb_faux": 0,
+    "taux_faux": 0.0,
+    "statut": "OK"
+  },
+  {
+    "date": "07/06/2026",
+    "heure": "07:09:25",
+    "utilisateur": "utilisateur",
+    "fichier": "billets_test.csv",
+    "nb_total": 5,
+    "nb_auth": 2,
+    "nb_faux": 3,
+    "taux_faux": 60.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "21:44:54",
+    "fichier": "billets2.csv",
+    "nb_total": 100,
+    "nb_auth": 66,
+    "nb_faux": 34,
+    "taux_faux": 34.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "21:09:12",
+    "fichier": "billets_vrais_15_nouvelles_donnees.csv",
+    "nb_total": 15,
+    "nb_auth": 15,
+    "nb_faux": 0,
+    "taux_faux": 0.0,
+    "statut": "OK"
+  },
+  {
+    "date": "27/05/2026",
+    "heure": "11:04:57",
+    "fichier": "billets.csv",
+    "nb_total": 1500,
+    "nb_auth": 1005,
+    "nb_faux": 495,
+    "taux_faux": 33.0,
+    "statut": "ALERTE"
+  },
+  {
+    "date": "27/05/2026",
+    "heure": "09:12:39",
+    "fichier": "billets2.csv",
+    "nb_total": 100,
+    "nb_auth": 66,
+    "nb_faux": 34,
+    "taux_faux": 34.0,
+    "statut": "ALERTE"
+  }
+]
