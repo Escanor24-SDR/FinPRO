@@ -33,7 +33,7 @@ st.set_page_config(
 # CONSTANTES
 # ─────────────────────────────────────────────
 
-API_URL         = "http://localhost:8000"
+API_URL         = "https://finpro-api-0o4g.onrender.com"
 FEATURE_NAMES   = ["diagonal","height_left","height_right","margin_low","margin_up","length"]
 HISTORIQUE_FILE      = "historique_analyses.json"   # historique admin (toutes les analyses)
 HISTORIQUE_USER_FILE = "historique_user.json"       # historique utilisateur (ses analyses)
