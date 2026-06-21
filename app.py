@@ -42,11 +42,24 @@ HISTORIQUE_USER_FILE = "historique_user.json"       # historique utilisateur (se
 # COMPTES UTILISATEURS
 # ─────────────────────────────────────────────
 
-COMPTES = {
-    "utilisateur": {"mot_de_passe": "user123",  "role": "user"},
-    "Madara": {"mot_de_passe": "madara24",  "role": "user"},
-    "admin":       {"mot_de_passe": "admin123",  "role": "admin"},
-}
+COMPTES_FILE = "comptes.json"
+
+def charger_comptes():
+    if not os.path.exists(COMPTES_FILE):
+        comptes_defaut = {
+            "utilisateur": {"mot_de_passe": "user123",  "role": "user"},
+            "Madara":      {"mot_de_passe": "madara24",  "role": "user"},
+            "admin":       {"mot_de_passe": "admin123",  "role": "admin"},
+        }
+        with open(COMPTES_FILE, "w", encoding="utf-8") as f:
+            json.dump(comptes_defaut, f, ensure_ascii=False, indent=2)
+        return comptes_defaut
+    with open(COMPTES_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def sauvegarder_comptes(comptes):
+    with open(COMPTES_FILE, "w", encoding="utf-8") as f:
+        json.dump(comptes, f, ensure_ascii=False, indent=2)
 
 # Palette — bleu marine + vert/rouge sobres
 NAVY    = "#1B3A6B"
@@ -1126,11 +1139,12 @@ def page_a_propos():
 
 def verifier_identifiants(nom, mot_de_passe):
     """Vérifie les identifiants et retourne le rôle si OK, sinon None."""
-    compte = COMPTES.get(nom)
+    comptes = charger_comptes()
+    compte = comptes.get(nom)
     if compte and compte["mot_de_passe"] == mot_de_passe:
         return compte["role"]
     return None
-
+    
 def se_deconnecter():
     """Réinitialise la session."""
     st.session_state["connecte"]  = False
@@ -1193,7 +1207,7 @@ def page_login():
             else:
                 st.error("❌  Identifiants incorrects. Vérifiez votre nom d'utilisateur et mot de passe.")
 
-        # Aide discrète
+      # Aide discrète
         st.markdown(f"""
         <div style="text-align:center; margin-top:20px;">
             <span style="font-size:12px; color:#334155;">
@@ -1202,6 +1216,36 @@ def page_login():
         </div>
         """, unsafe_allow_html=True)
 
+        # Séparateur
+        st.markdown("<div style='height:16px;'></div>", unsafe_allow_html=True)
+        st.divider()
+
+        # Formulaire inscription
+        st.markdown(f"<p style='text-align:center;font-size:14px;font-weight:600;color:{NAVY};margin-bottom:12px;'>Pas encore de compte ?</p>", unsafe_allow_html=True)
+
+        with st.form("form_inscription"):
+            nouveau_nom = st.text_input("Nom d'utilisateur", placeholder="Choisissez un nom", key="reg_nom")
+            nouveau_mdp = st.text_input("Mot de passe", type="password", placeholder="••••••••", key="reg_mdp")
+            confirmer_mdp = st.text_input("Confirmer le mot de passe", type="password", placeholder="••••••••", key="reg_mdp2")
+            inscrire = st.form_submit_button("Créer un compte", use_container_width=True)
+
+        if inscrire:
+            if not nouveau_nom or not nouveau_mdp or not confirmer_mdp:
+                st.error("Veuillez remplir tous les champs.")
+            elif nouveau_mdp != confirmer_mdp:
+                st.error("Les mots de passe ne correspondent pas.")
+            elif len(nouveau_mdp) < 6:
+                st.error("Le mot de passe doit contenir au moins 6 caractères.")
+            elif nouveau_nom.lower() == "admin":
+                st.error("Ce nom d'utilisateur est réservé.")
+            else:
+                comptes = charger_comptes()
+                if nouveau_nom in comptes:
+                    st.error("Ce nom d'utilisateur existe déjà.")
+                else:
+                    comptes[nouveau_nom] = {"mot_de_passe": nouveau_mdp, "role": "user"}
+                    sauvegarder_comptes(comptes)
+                    st.success(f"✅ Compte créé ! Vous pouvez maintenant vous connecter avec **{nouveau_nom}**.")
 
 # ─────────────────────────────────────────────
 # PAGE 5 — TABLEAU DE BORD ADMIN
