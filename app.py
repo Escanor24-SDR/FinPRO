@@ -44,6 +44,7 @@ HISTORIQUE_USER_FILE = "historique_user.json"       # historique utilisateur (se
 
 COMPTES = {
     "utilisateur": {"mot_de_passe": "user123",  "role": "user"},
+    "Madara": {"mot_de_passe": "madara24",  "role": "user"},
     "admin":       {"mot_de_passe": "admin123",  "role": "admin"},
 }
 
